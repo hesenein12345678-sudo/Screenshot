@@ -43,10 +43,9 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             align-items: center;
             background: linear-gradient(135deg, #0d0914 0%, #0f172a 50%, #050510 100%);
-            padding: 20px 15px;
+            padding: 0 0 20px 0;
         }
 
         /* دوائر الضوء النيونية في الخلفية */
@@ -63,7 +62,7 @@
             width: 250px;
             height: 250px;
             background: #8b5cf6;
-            top: -50px;
+            top: 100px;
             right: -50px;
         }
 
@@ -75,19 +74,38 @@
             left: -50px;
         }
 
-        /* الحاوية الرئيسية */
+        /* البانر العلوي المتصل بالحواف وتأثير الاختفاء السكبي */
+        .top-banner-container {
+            width: 100%;
+            position: relative;
+            margin-bottom: 10px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .top-banner-img {
+            width: 100%;
+            height: auto;
+            max-height: 220px;
+            object-fit: cover;
+            display: block;
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        /* الحاوية الرئيسية للمحتوى مع الحفاظ على المسافات الجانبية */
         .container {
             width: 100%;
             max-width: 500px;
-            z-index: 1;
+            z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 25px;
-            margin: auto;
+            gap: 20px;
+            padding: 0 15px;
         }
 
-        /* الهيدر والعلامة التجاري */
+        /* الهيدر والعلامة التجارية */
         .header-tag {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -101,13 +119,14 @@
             align-items: center;
             gap: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-top: -15px;
         }
 
         /* قسم أيقونة التطبيق واستعراضه */
         .app-icon-wrapper {
             position: relative;
-            width: 140px;
-            height: 140px;
+            width: 130px;
+            height: 130px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -282,8 +301,13 @@
     <div class="glow-1"></div>
     <div class="glow-2"></div>
 
+    <!-- البانر المتحرك العلوي الملتقط بالأطراف -->
+    <div class="top-banner-container">
+        <img src="paner.gif" alt="Banner" class="top-banner-img" onerror="this.parentNode.style.display='none'">
+    </div>
+
     <div class="container">
-        
+
         <!-- شارة تصميم Liquid Glass -->
         <div class="header-tag">
             <i class="fa-solid fa-droplet"></i>
@@ -342,12 +366,12 @@
         <div class="social-section">
             <a href="https://t.me/xezn9" target="_blank" class="social-btn btn-telegram">
                 <i class="fa-brands fa-telegram"></i>
-                <span>حساب تيليجرام </span>
+                <span>قناة تيليجرام (xezn9)</span>
             </a>
 
             <a href="https://www.tiktok.com/@xezn99" target="_blank" class="social-btn btn-tiktok">
                 <i class="fa-brands fa-tiktok"></i>
-                <span>حساب تيك توك </span>
+                <span>حساب تيك توك (xezn99)</span>
             </a>
         </div>
 
